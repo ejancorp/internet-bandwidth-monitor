@@ -1,0 +1,27 @@
+{
+  "name": "internet-bandwidth-monitor",
+  "version": "1.0.0",
+  "description": "Helps you monitor your internet connection at home, better use Raspberry Pi.",
+  "main": "src/App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules src/App.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejancorp/internet-bandwidth-monitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejancorp/internet-bandwidth-monitor/issues"
+  },
+  "homepage": "https://github.com/ejancorp/internet-bandwidth-monitor#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "ping": "^0.2.3",
+    "speedtest-net": "^2.1.1"
+  }
+}
