@@ -1,3 +1,4 @@
+import moment from 'moment';
 import SpeedTest from 'speedtest-net';
 
 export default class SpeedTester {
@@ -18,7 +19,6 @@ export default class SpeedTester {
     }
 
     job() {
-        console.log('Speed Job');
         return SpeedTest({ acceptLicense: true }).then(this.format).then(this.callback);
     }
 
@@ -31,7 +31,8 @@ export default class SpeedTester {
             external_ip: response.interface.externalIp,
             server_name: response.server.name,
             server_host: response.server.host,
-            result_url: response.result.url
+            result_url: response.result.url,
+            timestamp: moment().unix()
         };
     }
 }

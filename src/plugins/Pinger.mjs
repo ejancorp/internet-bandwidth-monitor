@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import Promise from 'bluebird';
 import ping from 'ping';
+import moment from 'moment';
 
 export default class Pinger {
 
@@ -34,7 +35,8 @@ export default class Pinger {
                 alive: result.alive,
                 time: result.time,
                 loss: result.packetLoss,
-                host: result.host
+                host: result.host,
+                timestamp: moment().unix()
             };
         });
     }

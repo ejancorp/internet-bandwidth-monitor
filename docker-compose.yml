@@ -1,0 +1,22 @@
+version: '3.2'
+
+networks: 
+    monitor:
+        driver: bridge
+
+services: 
+
+    redis:
+        image: redis:latest
+        command: ["redis-server", "--appendonly", "yes"]
+        ports: 
+            - "6379:6379"
+        networks: 
+            - monitor
+
+    app:
+        build: 
+            context: ./
+            dockerfile: ./Dockerfile
+        networks: 
+            - monitor
