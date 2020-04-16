@@ -16,7 +16,7 @@ export default class Metrics {
         this.speed_ping_latency_gauge = new prom.Gauge({ name: 'speed_ping_latency', help: 'bandwidth ping latency gauge', });
         this.speed_download_bandwidth_gauge = new prom.Gauge({ name: 'speed_download_bandwidth', help: 'bandwidth download bandwidth gauge', });
         this.speed_upload_bandwidth_gauge = new prom.Gauge({ name: 'speed_upload_bandwidth', help: 'bandwidth upload bandwidth gauge', });
-        this.speed_detail_gauge = new prom.Gauge({ name: 'speed_detail', help: 'bandwidth Detail', 'labelNames': ['isp', 'external_ip', 'server_host', 'timestamp'] });
+        this.speed_detail_gauge = new prom.Gauge({ name: 'speed_detail', help: 'bandwidth Detail', 'labelNames': ['isp', 'external_ip', 'server_host', 'timestamp', 'download', 'upload', 'jitter', 'latency'] });
 
         this.hosts = _.map(hosts, (value) => {
             const name = _.replace(_.replace(_.toString(value), /\./g, '_'), /\-/, '_');
@@ -105,8 +105,12 @@ export default class Metrics {
                 isp: value.isp,
                 external_ip: value.external_ip, 
                 server_host: value.server_host,
-                timestamp: value.timestamp
-            }, 1);
+                timestamp: value.timestamp,
+                download: value.download.bandwidth,
+                upload: value.upload.bandwidth,
+                jitter: value.ping.jitter,
+                latency: value.ping.latency
+            }, value.ping.latency);
 
             return value;
         });

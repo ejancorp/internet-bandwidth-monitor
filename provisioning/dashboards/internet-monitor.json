@@ -1,0 +1,676 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "$$hashKey": "object:31",
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1,
+    "iteration": 1587058933960,
+    "links": [],
+    "panels": [
+      {
+        "datasource": "prometheus",
+        "gridPos": {
+          "h": 6,
+          "w": 5,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "fieldOptions": {
+            "calcs": [
+              "last"
+            ],
+            "defaults": {
+              "decimals": 2,
+              "mappings": [],
+              "max": 20,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": null
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 3
+                  },
+                  {
+                    "color": "green",
+                    "value": 5
+                  }
+                ]
+              },
+              "unit": "bps"
+            },
+            "overrides": [],
+            "values": false
+          },
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "6.7.2",
+        "targets": [
+          {
+            "expr": "speed_download_bandwidth",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Download",
+        "type": "gauge"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": true,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "prometheus",
+        "format": "ms",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 5,
+          "x": 5,
+          "y": 0
+        },
+        "id": 10,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:1138",
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "$$hashKey": "object:1139",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "pluginVersion": "6.7.2",
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "$$hashKey": "object:1147",
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true,
+          "ymax": null,
+          "ymin": null
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "expr": "speed_ping_latency",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "thresholds": "",
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Latency",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:1141",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "prometheus",
+        "fill": 1,
+        "fillGradient": 1,
+        "gridPos": {
+          "h": 6,
+          "w": 14,
+          "x": 10,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 2,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "ping_aws_amazon_com",
+            "interval": "",
+            "legendFormat": "aws.amazon.com",
+            "refId": "A"
+          },
+          {
+            "expr": "ping_cloudflare_com",
+            "interval": "",
+            "legendFormat": "cloudflare.com",
+            "refId": "B"
+          },
+          {
+            "expr": "ping_google_com",
+            "interval": "",
+            "legendFormat": "google.com",
+            "refId": "C"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Ping",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:86",
+            "format": "ms",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:87",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "datasource": "prometheus",
+        "gridPos": {
+          "h": 6,
+          "w": 5,
+          "x": 0,
+          "y": 6
+        },
+        "id": 7,
+        "options": {
+          "fieldOptions": {
+            "calcs": [
+              "last"
+            ],
+            "defaults": {
+              "decimals": 2,
+              "mappings": [],
+              "max": 20,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": null
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 3
+                  },
+                  {
+                    "color": "green",
+                    "value": 5
+                  }
+                ]
+              },
+              "title": "",
+              "unit": "bps"
+            },
+            "overrides": [],
+            "values": false
+          },
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "6.7.2",
+        "targets": [
+          {
+            "expr": "speed_upload_bandwidth",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Upload",
+        "type": "gauge"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": true,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "prometheus",
+        "format": "ms",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 5,
+          "x": 5,
+          "y": 6
+        },
+        "id": 9,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:1138",
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "$$hashKey": "object:1139",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "pluginVersion": "6.7.2",
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "$$hashKey": "object:1147",
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true,
+          "ymax": null,
+          "ymin": null
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "expr": "speed_ping_jitter",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "thresholds": "",
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Jitter",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:1141",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "cacheTimeout": null,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "prometheus",
+        "fill": 1,
+        "fillGradient": 1,
+        "gridPos": {
+          "h": 6,
+          "w": 14,
+          "x": 10,
+          "y": 6
+        },
+        "hiddenSeries": false,
+        "id": 4,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "6.7.2",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "loss_aws_amazon_com",
+            "interval": "",
+            "legendFormat": "aws.amazon.com",
+            "refId": "A"
+          },
+          {
+            "expr": "loss_cloudflare_com",
+            "interval": "",
+            "legendFormat": "cloudflare.com",
+            "refId": "B"
+          },
+          {
+            "expr": "loss_google_com",
+            "interval": "",
+            "legendFormat": "google.com",
+            "refId": "C"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Packet Loss",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:345",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:346",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 22,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": null,
+          "current": {
+            "tags": [],
+            "text": "Etisalat",
+            "value": "Etisalat"
+          },
+          "datasource": "prometheus",
+          "definition": "speed_detail",
+          "hide": 0,
+          "includeAll": false,
+          "index": -1,
+          "label": "ISP",
+          "multi": false,
+          "name": "isp",
+          "options": [
+            {
+              "$$hashKey": "object:548",
+              "selected": true,
+              "text": "Etisalat",
+              "value": "Etisalat"
+            }
+          ],
+          "query": "speed_detail",
+          "refresh": 0,
+          "regex": "/isp=\"(.*?)\"/",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "text": "92.97.186.9",
+            "value": "92.97.186.9"
+          },
+          "datasource": "prometheus",
+          "definition": "speed_detail",
+          "hide": 0,
+          "includeAll": false,
+          "index": -1,
+          "label": "IP Address",
+          "multi": false,
+          "name": "ip_address",
+          "options": [
+            {
+              "$$hashKey": "object:789",
+              "selected": true,
+              "text": "92.97.186.9",
+              "value": "92.97.186.9"
+            }
+          ],
+          "query": "speed_detail",
+          "refresh": 0,
+          "regex": "/external_ip=\"(.*?)\"/",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "tags": [],
+            "text": "speedtest1.etisalat.ae",
+            "value": "speedtest1.etisalat.ae"
+          },
+          "datasource": "prometheus",
+          "definition": "speed_detail",
+          "hide": 0,
+          "includeAll": false,
+          "index": -1,
+          "label": "Server",
+          "multi": false,
+          "name": "server",
+          "options": [
+            {
+              "$$hashKey": "object:857",
+              "selected": true,
+              "text": "speedtest1.etisalat.ae",
+              "value": "speedtest1.etisalat.ae"
+            },
+            {
+              "$$hashKey": "object:858",
+              "selected": false,
+              "text": "ae.ap.speedtest.i3d.net",
+              "value": "ae.ap.speedtest.i3d.net"
+            }
+          ],
+          "query": "speed_detail",
+          "refresh": 0,
+          "regex": "/server_host=\"(.*?)\"/",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        }
+      ]
+    },
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "timezone": "",
+    "title": "Internet/Bandwidth Monitor",
+    "uid": "YuSHbMqZk",
+    "variables": {
+      "list": []
+    },
+    "version": 4
+  }

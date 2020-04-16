@@ -26,7 +26,9 @@ export default class Pinger {
     }
 
     process(host) {
-        return ping.promise.probe(host);
+        return ping.promise.probe(host).then((value) => {
+            return _.extend(value, { host: host });
+        });
     }
 
     format(response) {
