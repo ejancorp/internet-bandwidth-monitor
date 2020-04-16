@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import Pinger from './plugins/Pinger.mjs';
 import SpeedTester from './plugins/SpeedTester.mjs';
+import Metrics from './plugins/Metrics.mjs';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ class App {
         );
         this.pinger = new Pinger(this.hosts, this.ping_callback.bind(this));
         this.speedtest = new SpeedTester(this.speed_callback.bind(this));
+        this.metrics = new Metrics(process.env.METRICS_PORT);
     }
 
     get hosts() {
@@ -29,6 +31,7 @@ class App {
         this.redis_client.on('error', console.error);
         this.pinger.start();
         this.speedtest.start();
+        this.metrics.start();
     }
 
     ping_callback(response) {
