@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export default class Pinger {
 
-    constructor(hosts, callback, interval = 1000) {
+    constructor(hosts, callback, interval = 5000) {
         this.hosts = hosts;
         this.callback = callback;
         this.interval = interval;

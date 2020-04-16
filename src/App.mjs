@@ -18,7 +18,7 @@ class App {
         );
         this.pinger = new Pinger(this.hosts, this.ping_callback.bind(this));
         this.speedtest = new SpeedTester(this.speed_callback.bind(this));
-        this.metrics = new Metrics(process.env.METRICS_PORT);
+        this.metrics = new Metrics(this.hosts, process.env.METRICS_PORT);
     }
 
     get hosts() {
